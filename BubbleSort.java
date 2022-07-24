@@ -1,4 +1,6 @@
 public class BubbleSort {
+    /*  Sort from smallest to largest
+     */
     public static void main(String[] args) {
         int[] arr = {7,2,5,2,7,3,4,8,4,5,33,2,1,34};
         int temp = 0;
