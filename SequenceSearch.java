@@ -19,6 +19,7 @@ public class SequenceSearch {
                 index = i;
             }
         }
+        //index == -1 is always used for the exception
         if(index == -1){
             System.out.println(fruit + " is not in the array.");
         }
