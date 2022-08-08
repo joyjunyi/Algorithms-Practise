@@ -1,12 +1,13 @@
 # Algorithms
 
 ## Insertion Sort
+
 ```Java
 import java.util.Arrays;
 
 public class InsertionSort {
     public static void main(String[] args) {
-        int[] arr = {101,34,119,1};
+        int[] arr = {101,34,119,1};     //初始数组
         insertionSort(arr);
     }
     // 最终合体
@@ -27,3 +28,5 @@ public class InsertionSort {
     }
 }
 ```
+
+![Insertion sort time complexity](https://i.stack.imgur.com/AxoMa.png)
