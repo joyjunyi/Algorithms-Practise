@@ -1,7 +1,7 @@
 # Algorithms
 
 ## Insertion Sort
-
+    * **Code**
 ```Java
 import java.util.Arrays;
 
@@ -10,7 +10,7 @@ public class InsertionSort {
         int[] arr = {101,34,119,1};     //初始数组
         insertionSort(arr);
     }
-    // 最终合体
+    
     public static void insertionSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int key = arr[i];
@@ -28,5 +28,6 @@ public class InsertionSort {
     }
 }
 ```
+    * **Time Comlexity**
 
 ![Insertion sort time complexity](https://i.stack.imgur.com/AxoMa.png)
