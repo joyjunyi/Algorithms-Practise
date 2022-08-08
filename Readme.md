@@ -1,4 +1,6 @@
-#Insertion Sort#
+#Algorithms
+
+#Insertion Sort
 ```Java
 import java.util.Arrays;
 
