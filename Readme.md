@@ -1,7 +1,7 @@
 # Algorithms
 
 ## Insertion Sort
-    * **Code**
+  **Code**
 ```Java
 import java.util.Arrays;
 
@@ -28,6 +28,6 @@ public class InsertionSort {
     }
 }
 ```
-    * **Time Comlexity**
+  **Time Complexity**
 
 ![Insertion sort time complexity](https://i.stack.imgur.com/AxoMa.png)
