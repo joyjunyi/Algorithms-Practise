@@ -31,3 +31,21 @@ public class InsertionSort {
   **Time Complexity**
 
 ![Insertion sort time complexity](https://i.stack.imgur.com/AxoMa.png)
+
+## Merge Sort
+divide and conquer: 分治法，即把问题分成若干子问题，分别解决（排序），最后合并
+**Pseudocode**
+```
+//先分成子问题
+function MergeSort(A,left,right)
+    if left >= right
+        return
+    mid = (left + right) / 2
+        
+
+```
+**Code**
+
+```Java
+
+```
