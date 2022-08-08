@@ -1,7 +1,7 @@
 # Algorithms
 
 ## Insertion Sort
-  **Code**
+  - **Code**
 ```Java
 import java.util.Arrays;
 
@@ -28,13 +28,14 @@ public class InsertionSort {
     }
 }
 ```
-  **Time Complexity**
+  - **Time Complexity**
 
 ![Insertion sort time complexity](https://i.stack.imgur.com/AxoMa.png)
 
 ## Merge Sort
 divide and conquer: 分治法，即把问题分成若干子问题，分别解决（排序），最后合并
-**Pseudocode**
+
+  - **Pseudocode**
 ```
 //先分成子问题
 function MergeSort(A,left,right)
@@ -44,7 +45,7 @@ function MergeSort(A,left,right)
         
 
 ```
-**Code**
+  - **Code**
 
 ```Java
 
