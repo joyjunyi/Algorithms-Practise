@@ -193,6 +193,7 @@ public class sort.QuickSort {
 
 - **Code**
 
+
 ```Java
 package sort;
 
@@ -268,7 +269,12 @@ public class HeapSort {
 ```
 - **Time Complexity**
 
-O(n) = n·lgn
+主要在于初始化建堆和后来交换后循环建堆的过程。
+* 循环n-1次，每次从根0一直到叶节点是log（n），所以O(nlg(n))
+* 初始化建堆为从非叶节点层的最右端一个结点向上循环建堆，2^(i-1)*(k-i)  (i为当前层数，k为堆高度) O（n）
+*  最好、最坏、平均情况都需要循环建堆， O（nlgn）
+
+————————————————
 - **Space Complexity**
 
-O(n) = n (因为在合并的时候要创建临时存放空间)
+空间复杂度：堆排序为原地排序，常量级额外空间 O（1）
