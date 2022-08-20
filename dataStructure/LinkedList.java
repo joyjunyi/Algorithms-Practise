@@ -10,14 +10,22 @@ public class LinkedList {
         Student student03 = new Student(03,"戴西","小戴");
         Student student04 = new Student(04,"王五","小王");
 
-        //创建一个链表，然后加入
+        //创建一个链表，然后按id顺序加入节点
         SingleLinkedList singleLinkedList = new SingleLinkedList();
         singleLinkedList.addByOrder(student01);
         singleLinkedList.addByOrder(student04);
         singleLinkedList.addByOrder(student02);
         singleLinkedList.addByOrder(student03);
 
-        //显示
+        //修改节点
+        Student newStudent03 = new Student(03,"戴森","小森");
+        singleLinkedList.update(newStudent03);
+
+        //删除节点
+        singleLinkedList.delete(student03);
+        singleLinkedList.delete(student04);
+
+        //显示整个链表
         singleLinkedList.traverse();
     }
 }
@@ -95,6 +103,37 @@ class SingleLinkedList{
             temp.nickname = updatedStudent.nickname;
         }else{  //没有找到
             System.out.println("没有找到编号为"+updatedStudent.id+"的节点，无法修改");
+        }
+    }
+    //删除节点
+    //遍历链表 => 找到要删节点的前一个节点 => 让前一个节点的next指向下下个节点
+    public void delete(Student deleteStudent){
+        //因为要找待删节点的前一个节点，因此temp == head，不等于head.next
+        Student temp = head;
+        //检查链表是否为空，为空就不遍历了
+        if(temp.next == null){
+            System.out.println("链表为空，不能删除");
+            return;
+        }
+        //新建标识，记录节点是否被找到
+        boolean flag = false;
+        //如果链表不为空，则遍历
+        while(true){    //造个死循环
+            //判断是否到链表最后
+            if(temp.next == null){
+                break;
+            }
+            if(temp.next.id == deleteStudent.id){
+                flag = true;
+                break;
+            }
+            //temp后移
+            temp = temp.next;
+        }
+        if(flag) {
+            temp.next = temp.next.next;
+        }else{
+            System.out.println("未找到节点，无法删除");
         }
     }
 
