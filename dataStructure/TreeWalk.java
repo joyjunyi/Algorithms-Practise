@@ -1,6 +1,6 @@
 package dataStructure;
 
-public class Tree {
+public class TreeWalk {
     public static void main(String[] args) {
 
     }
@@ -63,5 +63,13 @@ class EmployNode{
                 "\n";
     }
     //编写前序遍历的方法
-    
+    public void preOrder(){
+        System.out.println(this);   //先输出父节点
+        //递归向左子树前序遍历
+        if(this.left != null){
+            this.left.preOrder();
+        }
+        //递归向右子树前序遍历
+        if(this.right.preOrder();)
+    }
 }
