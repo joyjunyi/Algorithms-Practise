@@ -2,7 +2,63 @@ package dataStructure;
 
 public class TreeWalk {
     public static void main(String[] args) {
+        //先需要创建一颗二叉树
+        BinaryTree binaryTree = new BinaryTree();
+        //创建需要的节点
+        EmployNode root = new EmployNode(1,"Derek");
+        EmployNode employ02 = new EmployNode(2,"Joy");
+        EmployNode employ03 = new EmployNode(3,"Ma");
+        EmployNode employ04 = new EmployNode(4,"Zhu");
 
+        //说明，我们先手动创建二叉树，后面可以用递归的方式创建二叉树
+        root.setLeft(employ02);
+        //上面不能写root.left = employ02是因为left属性为私有，无法在外部更改
+        root.setRight(employ03);
+        employ03.setRight(employ04);
+
+        //把root给binary tree
+        binaryTree.setRoot(root);
+
+        //测试
+//        System.out.println("前序遍历");
+//        binaryTree.preOrder();
+
+        System.out.println("中序遍历");
+        binaryTree.inOrder();
+
+//        System.out.println("后序遍历");
+//        binaryTree.postOrder();
+    }
+}
+//定义Binary Tree 二叉树
+class BinaryTree{
+    private EmployNode root;
+    //给一个set方法
+
+    public void setRoot(EmployNode root) {
+        this.root = root;
+    }
+    //前序遍历
+    public void preOrder(){
+        if(this.root != null){
+            this.root.preOrder();
+        }else {
+            System.out.println("二叉树为空，无法遍历");
+        }
+    }
+    public void inOrder(){
+        if(this.root != null){
+            this.root.inOrder();
+        }else {
+            System.out.println("二叉树为空，无法遍历");
+        }
+    }
+    public void postOrder(){
+        if(this.root != null){
+            this.root.postOrder();
+        }else {
+            System.out.println("二叉树为空，无法遍历");
+        }
     }
 }
 //先创建 EmployNode 节点
@@ -59,8 +115,7 @@ class EmployNode{
     public String toString() {
         return "EmployNode:" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                "\n";
+                ", name='" + name + '\'';
     }
     //编写前序遍历的方法
     public void preOrder(){
@@ -70,6 +125,40 @@ class EmployNode{
             this.left.preOrder();
         }
         //递归向右子树前序遍历
-        if(this.right.preOrder();)
+        if(this.right != null){
+            this.right.preOrder();
+        }
+    }
+    public void inOrder(){
+        /* 中序遍历
+        ①	如果当前节点的左子节点不为空，则递归中序遍历
+        ②	输出当前节点
+        ③	如果当前节点的右子节点不为空，则递归中序遍历
+         */
+        if(this.left != null){
+            this.left.inOrder();
+        }
+
+        System.out.println(this);
+
+        if(this.right != null){
+            this.right.inOrder();
+        }
+    }
+    public void postOrder(){
+        /*	后序
+        ①	如果当前节点的左子节点不为空，则递归后序遍历
+        ②	如果当前节点的右子节点不为空，则递归后序遍历
+        ③	输出当前节点
+         */
+        if(this.left != null){
+            this.left.postOrder();
+        }
+
+        if(this.right != null){
+            this.right.postOrder();
+        }
+
+        System.out.println(this);
     }
 }
